@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <div class="alert alert-danger">{% blocktranslate %}Your username and password didn't match. Please try again.{% endblocktranslate %}</div>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <div class="alert alert-warning">Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</div>
+        {% else %}
+            <div class="alert alert-warning">Please login to see this page.</div>
+        {% endif %}
+    {% endif %}
+
+    <div class="container">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <label for="id_username" class="col-sm-2 col-form-label">{{ form.username.label_tag }}</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="id_password" class="col-sm-2 col-form-label">{{ form.password.label_tag }}</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password" autocomplete="current-password" required="" id="id_password">
+                </div>
+            </div>
+            <button type="submit" value="login" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    {# Assumes you set up the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+{% endblock %}

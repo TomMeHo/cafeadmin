@@ -1,0 +1,27 @@
+@font-face { font-family: YoungSerif; src: url('../static/youngserif-regular.TTF'); }
+@font-face { font-family: Gabarito; font-weight: normal; src: url('../static/Gabarito-Regular.ttf'); }
+@font-face { font-family: Gabarito; font-weight: bold; src: url('../static/Gabarito-Black.ttf'); }
+
+header {
+    font-family: Gabarito;
+    font-weight: bold;
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+body {
+    font-family: Gabarito;
+    padding-left: 15px;
+}
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}Shift Planner - Monthly View{% endblock %}
+{% block content %}
+
+    <div class="container m-4">
+        <span class="col m-3" >
+            <a class="col" href="/planner/monthly/{{ previous.year }}/{{ previous.month }}">{% translate "previous" %}</a>
+        </span>
+        <span class="col h2 m-3" >{{ first_day|date:"F Y" }}</span>
+        <span class="col m-3" >
+            <a class="col" href="/planner/monthly/{{ next.year }}/{{ next.month }}">{% translate "next" %}</a>
+        </span>
+    </div>
+    <div class="container">
+
+        {% with weeks=month.weeks %}
+            {% with restrict_on_month=month.month %}
+                {% include "shifts/weekly_calendar.html" %}
+            {% endwith %}
+        {% endwith %}
+    </div>
+
+{% endblock %}

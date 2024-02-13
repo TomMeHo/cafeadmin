@@ -1,0 +1,56 @@
+- model: shift_planner.holiday
+  fields:
+    date: 2024-01-01
+    name: Neujahr
+- model: shift_planner.holiday
+  fields:
+    date: 2024-01-06
+    name: Heilige Drei Könige
+- model: shift_planner.holiday
+  fields:
+    date: 2024-03-29
+    name: Karfreitag 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-04-01
+    name: Ostermontag 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-05-01
+    name: Tag der Arbeit 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-05-09
+    name: Christi Himmelfahrt 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-05-20
+    name: Pfingstmontag
+- model: shift_planner.holiday
+  fields:
+    date: 2024-05-30
+    name: Fronleichnam 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-10-03
+    name: Tag der Deutschen Einheit 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-11-01
+    name: Allerheiligen 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-12-24
+    name: Heiligabend 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-12-25
+    name: 1. Weihnachtsfeiertag 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-12-26
+    name: 2. Weihnachtsfeiertag 
+- model: shift_planner.holiday
+  fields:
+    date: 2024-12-31
+    name: Silvester

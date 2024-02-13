@@ -1,0 +1,12 @@
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+
+# SQLite files
+db.sqlite3
+*.sqlite.db*

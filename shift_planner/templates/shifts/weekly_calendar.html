@@ -1,0 +1,44 @@
+{% load i18n %}
+
+{% translate "Monday"    as Monday %}
+{% translate "Tuesday"   as Tuesday %}
+{% translate "Wednesday" as Wednesday %}
+{% translate "Thursday"  as Thursday %}
+{% translate "Friday"    as Friday %}
+{% translate "Saturday"  as Saturday %}
+{% translate "Sunday"    as Sunday %}
+
+<!-- inspired by https://codepen.io/chrisdpratt/pen/OOybam -->
+<div class="container-flex">
+    <header>
+        <div class="row d-none d-sm-flex p-1 bg-dark text-white">
+            <h5 class="col-sm p-1 text-center">{{ Monday }}</h5>
+            <h5 class="col-sm p-1 text-center">{{ Tuesday }}</h5>
+            <h5 class="col-sm p-1 text-center">{{ Wednesday }}</h5>
+            <h5 class="col-sm p-1 text-center">{{ Thursday }}</h5>
+            <h5 class="col-sm p-1 text-center">{{ Friday }}</h5>
+            <h5 class="col-sm p-1 text-center">{{ Saturday }}</h5>
+            <h5 class="col-sm p-1 text-center">{{ Sunday }}</h5>
+        </div>
+    </header>
+    {% for week in weeks %}
+        <div class="row border border-right-0 border-bottom-0">
+            {% for day in week.days %} 
+            <!-- TODO Blende Tage ohne Inhalt auf Mobile aus. -->
+                <div class="col-sm p-2 border border-left-0 border-top-0 d-sm-inline-block d-none {% if day.is_past == True %} bg-light text-muted {% endif %}">
+                    {% if not restrict_on_month or restrict_on_month == day.date.month %}
+                        <h5 class="row align-items-center">
+                            <span class="date col-1">{{ day.date|date:"j" }}</span>
+                            <small class="col d-sm-none text-center text-muted">{{ day.date|date:"l" }}</small>
+                            <span class="col-1"></span>
+                        </h5>
+                        <p class="align-items-right text-truncate col">{{ day.holiday.name }}</p>
+                        {% for shift in day.shifts %}
+                            {% include "shifts/shift_card.html" %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

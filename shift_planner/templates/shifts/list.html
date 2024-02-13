@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>DEPRECATD SITE</h1>
+
+<h2>My next Shifts</h2>
+
+{% for shift in shifts %}
+    <h3>
+        {{ shift.date }}, {{ shift.starts_at }} - {{ shift.ends_at }}
+    </h3>
+    <p>Required: {{ shift.required_employees }}, registered: {{ shift.shiftregistration_set.count }}</p>
+    {% if shift.is_registered == True %}
+    <p>You are registered.</p>
+    {% endif %}
+
+    <a href="/planner/shift/{{ shift.id }}">Detail</a>
+    {% if is_authenticated == True %}
+        {% if shift.is_registered == False %}
+            <a href="/planner/shift/{{ shift.id }}/register">Register</a>
+        {% endif %}
+        {% if shift.is_registered == True %}
+            <a href="/planner/shift/{{ shift.id }}/unregister">Unregister</a>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

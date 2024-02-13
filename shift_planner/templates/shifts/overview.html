@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Shift Planner - My Overview" %}{% endblock %}
+{% block content %}
+
+    <!-- <div class="container">
+        <h1>My Shift Plan</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div> -->
+
+    <div class="container">
+        <h2>{% translate "My next shifts" %}</h2>
+        <p>{% translate "Next shifts I am registered for" %}</p>
+        {% if my_next_shifts|length == 0 %}
+            <div class="alert alert-secondary" role="alert">
+                {% translate "You are not registered for any shifts." %}
+            </div>
+        {% else %}
+            <div class="card-group">
+                {% for shift in my_next_shifts %}
+                    {% include "shifts/shift_card.html" %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="container-flex">
+        <h2>{% translate "Shifts within the next two weeks" %}</h2>
+        {% with weeks=next_weeks %}
+            {% include "shifts/weekly_calendar.html" %}
+        {% endwith %}
+    </div>
+
+{% endblock %}

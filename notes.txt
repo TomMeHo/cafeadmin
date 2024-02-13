@@ -1,0 +1,6 @@
+Ressources for Bootstrap: 
+
+- https://getbootstrap.com/docs/5.3/components/accordion/
+
+Recommendations:
+- https://vuetifyjs.com/en/components/all/#containment

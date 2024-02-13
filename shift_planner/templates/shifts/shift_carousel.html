@@ -1,0 +1,34 @@
+<div id="next_three_shifts" class="carousel slide" data-bs-ride="carousel">
+    <div class="row">
+        <div class="carousel-inner">
+            <!-- TODO Verschönerung möglich mit: https://getbootstrap.com/docs/5.3/components/carousel/#how-it-works -->
+            {% with shifts=my_next_shifts %}
+                {% with cards_with_date=True %}
+                    <div class="carousel-item active">
+                        {% with shift=shifts.0 %}
+                            {% include "shifts/shift_card.html" %}
+                        {% endwith %}
+                    </div>
+                    <div class="carousel-item">
+                        {% with shift=shifts.1 %}
+                            {% include "shifts/shift_card.html" %}
+                        {% endwith %}
+                    </div>
+                    <div class="carousel-item">
+                        {% with shift=shifts.2 %}
+                            {% include "shifts/shift_card.html" %}
+                        {% endwith %}
+                    </div>
+                {% endwith %}
+            {% endwith %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#next_three_shifts" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#next_three_shifts" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>

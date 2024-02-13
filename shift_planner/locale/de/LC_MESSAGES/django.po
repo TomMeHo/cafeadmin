@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-13 08:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\shift_planner\apps.py:8
+msgid "Shift Planner"
+msgstr "Schichtplaner"
+
+#: .\shift_planner\models.py:14
+msgid "Date"
+msgstr "Datum"
+
+#: .\shift_planner\models.py:15
+msgid "Starts at"
+msgstr "Startet um"
+
+#: .\shift_planner\models.py:16
+msgid "Ends at"
+msgstr "Endet um"
+
+#: .\shift_planner\models.py:17
+msgid "Title"
+msgstr "Bezeichnung"
+
+#: .\shift_planner\models.py:18
+msgid "Minimum required employees"
+msgstr "Mindestens erforderliche Mitarbeiter"
+
+#: .\shift_planner\models.py:19
+msgid "Maximum required employees"
+msgstr "Maximale Anzahl Mitarbeiter"
+
+#: .\shift_planner\templates\base.html:27
+#, fuzzy
+#| msgid "Shift Planner"
+msgid "My Shiftplan"
+msgstr "Schichtplaner"
+
+#: .\shift_planner\templates\base.html:30
+msgid "Overview by month"
+msgstr "Monatsübersicht"
+
+#: .\shift_planner\templates\base.html:33
+#, fuzzy, python-format
+#| msgid "Logged in as: {{ user.get_full_name }}"
+msgid " Logged in as: %(name)s "
+msgstr "Eingeloggt als: {{ user.get_full_name }}"
+
+#: .\shift_planner\templates\registration\login.html:10
+#: .\shift_planner\templates\registration\logout.html:10
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: .\shift_planner\templates\shifts\detail.html:4
+#: .\shift_planner\templates\shifts\overview.html:4
+#, fuzzy
+#| msgid "Shift Planner"
+msgid "Shift Planner - My Overview"
+msgstr "Schichtplaner"
+
+#: .\shift_planner\templates\shifts\monthly.html:8
+msgid "previous"
+msgstr "zuvor"
+
+#: .\shift_planner\templates\shifts\monthly.html:12
+msgid "next"
+msgstr "danach"
+
+#: .\shift_planner\templates\shifts\overview.html:13
+msgid "My next shifts"
+msgstr "Meine nächsten Schichten"
+
+#: .\shift_planner\templates\shifts\overview.html:14
+msgid "Next shifts I am registered for"
+msgstr "Die nächsten Schichten, für die ich eingetragen bin"
+
+#: .\shift_planner\templates\shifts\overview.html:17
+msgid "You are not registered for any shifts."
+msgstr "Sie sind eingetragen."
+
+#: .\shift_planner\templates\shifts\overview.html:29
+msgid "Shifts within the next two weeks"
+msgstr "Schichten innerhalb der nächsten zwei Wochen"
+
+#: .\shift_planner\templates\shifts\shift_card.html:12
+msgid "You are registered."
+msgstr "Sie sind eingetragen."
+
+#: .\shift_planner\templates\shifts\shift_card.html:13
+msgid "Not registered."
+msgstr "Sie sind nicht eingetragen."
+
+#: .\shift_planner\templates\shifts\shift_card.html:19
+msgid "Required Employees"
+msgstr "Erforderliche Mitarbeiter"
+
+#: .\shift_planner\templates\shifts\shift_card.html:23
+msgid "Registered Employees"
+msgstr "Eingetragene Mitarbeiter"
+
+#: .\shift_planner\templates\shifts\shift_card.html:32
+msgid "Understaffed."
+msgstr "Unterbesetzt"
+
+#: .\shift_planner\templates\shifts\shift_card.html:41
+msgid "Register"
+msgstr "Eintragen"
+
+#: .\shift_planner\templates\shifts\shift_card.html:44
+msgid "Unregister"
+msgstr "Austragen"
+
+#: .\shift_planner\templates\shifts\shift_card.html:47
+msgid "Detail"
+msgstr "Detail"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:3
+msgid "Monday"
+msgstr "Montag"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:4
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:5
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:6
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:7
+msgid "Friday"
+msgstr "Freitag"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:8
+msgid "Saturday"
+msgstr "Samstag"
+
+#: .\shift_planner\templates\shifts\weekly_calendar.html:9
+msgid "Sunday"
+msgstr "Sonntag"
+
+#~ msgid "My Overview"
+#~ msgstr "Meine Übersicht"
