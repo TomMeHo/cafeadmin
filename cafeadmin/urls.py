@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("planner/", include("shift_planner.urls")),
     path("accounts/", include('django.contrib.auth.urls')),
+    
 ]

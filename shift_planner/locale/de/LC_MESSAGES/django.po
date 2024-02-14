@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-13 08:32+0100\n"
+"POT-Creation-Date: 2024-02-14 21:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,33 +45,85 @@ msgstr "Mindestens erforderliche Mitarbeiter"
 msgid "Maximum required employees"
 msgstr "Maximale Anzahl Mitarbeiter"
 
-#: .\shift_planner\templates\base.html:27
-#, fuzzy
+#: .\shift_planner\templates\_logout.html:5
+msgid "Log Out"
+msgstr "Abmelden"
+
+#: .\shift_planner\templates\base.html:28
 #| msgid "Shift Planner"
 msgid "My Shiftplan"
-msgstr "Schichtplaner"
+msgstr "Mein Schichtplan"
 
-#: .\shift_planner\templates\base.html:30
+#: .\shift_planner\templates\base.html:31
 msgid "Overview by month"
 msgstr "Monatsübersicht"
 
-#: .\shift_planner\templates\base.html:33
+#: .\shift_planner\templates\base.html:34
+#: .\shift_planner\templates\base.html:38
 #, fuzzy, python-format
 #| msgid "Logged in as: {{ user.get_full_name }}"
 msgid " Logged in as: %(name)s "
 msgstr "Eingeloggt als: {{ user.get_full_name }}"
 
-#: .\shift_planner\templates\registration\login.html:10
-#: .\shift_planner\templates\registration\logout.html:10
+#: .\shift_planner\templates\base.html:41
+msgid "Change password"
+msgstr "Passwort ändern"
+
+#: .\shift_planner\templates\registration\login.html:12
 msgid "Your username and password didn't match. Please try again."
 msgstr ""
 
+#: .\shift_planner\templates\registration\password_change_done.html:4
+#: .\shift_planner\templates\registration\password_change_done.html:8
+msgid "Password changed"
+msgstr "Passwort geändert"
+
+#: .\shift_planner\templates\registration\password_change_done.html:10
+msgid "Your password was changed. Please log out."
+msgstr "Ihr Passwort wurde geändert. Bitte abmelden."
+
+#: .\shift_planner\templates\registration\password_change_form.html:4
+#: .\shift_planner\templates\registration\password_change_form.html:9
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+#: .\shift_planner\templates\registration\password_change_form.html:14
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Bitte den unten angezeigten Fehler beheben."
+msgstr[1] "Bitte die unten angezeigten Fehler beheben."
+
+#: .\shift_planner\templates\registration\password_change_form.html:20
+msgid ""
+"Please enter your old password, for security’s sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: .\shift_planner\templates\registration\password_change_form.html:23
+msgid "User:"
+msgstr "Benutzer"
+
+#: .\shift_planner\templates\registration\password_change_form.html:29
+msgid "Old password:"
+msgstr "Altes Passwort:"
+
+#: .\shift_planner\templates\registration\password_change_form.html:40
+msgid "New password:"
+msgstr "Neues Passwort:"
+
+#: .\shift_planner\templates\registration\password_change_form.html:56
+msgid "Confirm new password:"
+msgstr "Neues Passwort bestätigen:"
+
+#: .\shift_planner\templates\registration\password_change_form.html:72
+msgid "Change my password"
+msgstr "Mein Passwort ändern"
+
 #: .\shift_planner\templates\shifts\detail.html:4
 #: .\shift_planner\templates\shifts\overview.html:4
-#, fuzzy
 #| msgid "Shift Planner"
 msgid "Shift Planner - My Overview"
-msgstr "Schichtplaner"
+msgstr "Schichtplaner - Meine Übersicht"
 
 #: .\shift_planner\templates\shifts\monthly.html:8
 msgid "previous"
@@ -113,19 +165,19 @@ msgstr "Erforderliche Mitarbeiter"
 msgid "Registered Employees"
 msgstr "Eingetragene Mitarbeiter"
 
-#: .\shift_planner\templates\shifts\shift_card.html:32
+#: .\shift_planner\templates\shifts\shift_card.html:33
 msgid "Understaffed."
 msgstr "Unterbesetzt"
 
-#: .\shift_planner\templates\shifts\shift_card.html:41
+#: .\shift_planner\templates\shifts\shift_card.html:42
 msgid "Register"
 msgstr "Eintragen"
 
-#: .\shift_planner\templates\shifts\shift_card.html:44
+#: .\shift_planner\templates\shifts\shift_card.html:45
 msgid "Unregister"
 msgstr "Austragen"
 
-#: .\shift_planner\templates\shifts\shift_card.html:47
+#: .\shift_planner\templates\shifts\shift_card.html:48
 msgid "Detail"
 msgstr "Detail"
 
