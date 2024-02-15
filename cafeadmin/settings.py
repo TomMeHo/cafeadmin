@@ -128,7 +128,14 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Own user model
+AUTH_USER_MODEL = 'shift_planner.CustomUser'
+
 # Authentication
 LOGIN_URL= '/accounts/login'
 LOGIN_REDIRECT_URL = '/planner'          # after successfull login
 LOGOUT_REDIRECT_URL = '/accounts/login'  # after logout
+
+# Sending emails
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
