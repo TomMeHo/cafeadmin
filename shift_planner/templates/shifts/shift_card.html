@@ -11,21 +11,6 @@
         {% if shift.is_registered == True %}
             <p class="alert alert-info">{% translate "I'm registered" %}</p>
         {% endif %}
-            <!-- {% if shift.is_registered == False %} {% translate "Not registered." %} {% endif %} -->
-        <!-- <p>
-            <table class="table table-borderless table-sm">
-                <tbody>
-                  <tr>
-                    <td>{% translate "Required Employees" %}:</td>
-                    <td>{{ shift.required_employees_min }}</td>
-                  </tr>
-                  <tr>
-                    <td>{% translate "Registered Employees" %}:</td>
-                    <td>{{ shift.registered_employees }}</td>
-                  </tr>
-                </tbody>
-              </table>
-        </p> -->
         <p>
         {% if perms.shift_planner.does_planning %}
             {% if shift.required_employees_min > shift.registered_employees %}
@@ -51,8 +36,4 @@
             {% endif %}
         </div>
     </div>
-    <!-- <div class="card-footer">
-        {% if shift.is_registered == True  %}You are registered. {% endif %}
-        {% if shift.is_registered == False %}Not registered.     {% endif %}
-    </div> -->
 </div>

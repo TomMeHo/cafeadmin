@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 01:40+0100\n"
+"POT-Creation-Date: 2024-02-15 11:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,18 +60,22 @@ msgstr "Mein Schichtplan"
 msgid "Overview by month"
 msgstr "Monatsübersicht"
 
-#: .\shift_planner\templates\base.html:36
+#: .\shift_planner\templates\base.html:34
+msgid "Administration"
+msgstr "Verwaltung"
+
+#: .\shift_planner\templates\base.html:41
 #, python-format
 msgid " Logged in as: %(name)s "
 msgstr "Eingeloggt als: %(name)s "
 
-#: .\shift_planner\templates\base.html:39
+#: .\shift_planner\templates\base.html:44
 msgid "Change password"
 msgstr "Passwort ändern"
 
 #: .\shift_planner\templates\registration\login.html:12
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
+msgstr "Benutzername und Passwort passen nicht zueinander. Bitte erneut probieren."
 
 #: .\shift_planner\templates\registration\password_change_done.html:4
 #: .\shift_planner\templates\registration\password_change_done.html:8
@@ -98,6 +102,8 @@ msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
+"Bitte zunächst das alte Passwort eingeben. Danach das neue Passwort zweifach angeben, "
+"damit Tippfehler erkannt werden."
 
 #: .\shift_planner\templates\registration\password_change_form.html:23
 msgid "User:"
@@ -120,6 +126,7 @@ msgid "Change my password"
 msgstr "Mein Passwort ändern"
 
 #: .\shift_planner\templates\shifts\detail.html:4
+#: .\shift_planner\templates\shifts\detail.html:7
 msgid "Detail View"
 msgstr "Detailansicht"
 
@@ -129,7 +136,7 @@ msgstr "Details"
 
 #: .\shift_planner\templates\shifts\detail.html:17
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: .\shift_planner\templates\shifts\detail.html:18
 msgid "Required employees"
@@ -140,43 +147,51 @@ msgid "Registered employees"
 msgstr "Eingetragene Mitarbeiter"
 
 #: .\shift_planner\templates\shifts\detail.html:25
-#: .\shift_planner\templates\shifts\shift_card.html:33
+#: .\shift_planner\templates\shifts\shift_card.html:18
 msgid "Understaffed."
 msgstr "Unterbesetzt"
 
 #: .\shift_planner\templates\shifts\detail.html:33
-#, fuzzy
-#| msgid "You are not registered for any shifts."
 msgid "Registered for this shift"
-msgstr "Sie sind derzeit für keine kommende Schicht registriert."
+msgstr "Für diese Schicht eingetragen"
 
 #: .\shift_planner\templates\shifts\detail.html:36
-#, fuzzy
-#| msgid "Not registered."
 msgid "No one registered."
-msgstr "Sie sind nicht eingetragen."
+msgstr "Kein Mitarbeiter derzeit registriert."
 
 #: .\shift_planner\templates\shifts\detail.html:43
-#: .\shift_planner\templates\shifts\shift_card.html:45
+#: .\shift_planner\templates\shifts\shift_card.html:30
 msgid "Unregister"
 msgstr "Austragen"
 
 #: .\shift_planner\templates\shifts\detail.html:52
-#, fuzzy
-#| msgid "Not registered."
-msgid "Employees not registered"
-msgstr "Sie sind nicht eingetragen."
+msgid "Available Employees"
+msgstr "Verfügbare Mitarbeiter"
 
 #: .\shift_planner\templates\shifts\detail.html:55
-#, fuzzy
-#| msgid "You are registered."
 msgid "All employees are registered."
-msgstr "Sie sind eingetragen."
+msgstr "Alle Mitarbeiter sind eingetragen, keine weiteren verfügbar."
 
 #: .\shift_planner\templates\shifts\detail.html:62
-#: .\shift_planner\templates\shifts\shift_card.html:42
+#: .\shift_planner\templates\shifts\shift_card.html:27
 msgid "Register"
 msgstr "Eintragen"
+
+#: .\shift_planner\templates\shifts\detail.html:71
+msgid "Back"
+msgstr "Zurück"
+
+#: .\shift_planner\templates\shifts\detail.html:74
+msgid "Update"
+msgstr "Ändern"
+
+#: .\shift_planner\templates\shifts\detail.html:77
+msgid "Delete"
+msgstr "Löschen"
+
+#: .\shift_planner\templates\shifts\detail.html:82
+msgid "New"
+msgstr "Anlegen"
 
 #: .\shift_planner\templates\shifts\monthly.html:8
 msgid "previous"
@@ -210,20 +225,8 @@ msgstr "Schichten innerhalb der nächsten zwei Wochen"
 msgid "I'm registered"
 msgstr "Ich bin eingetragen."
 
-#: .\shift_planner\templates\shifts\shift_card.html:14
-msgid "Not registered."
-msgstr "Sie sind nicht eingetragen."
-
-#: .\shift_planner\templates\shifts\shift_card.html:19
-msgid "Required Employees"
-msgstr "Erforderliche Mitarbeiter"
-
-#: .\shift_planner\templates\shifts\shift_card.html:23
-msgid "Registered Employees"
-msgstr "Eingetragene Mitarbeiter"
-
-#: .\shift_planner\templates\shifts\shift_card.html:49
-#: .\shift_planner\templates\shifts\shift_card.html:50
+#: .\shift_planner\templates\shifts\shift_card.html:34
+#: .\shift_planner\templates\shifts\shift_card.html:35
 msgid "Detail"
 msgstr "Detail"
 
@@ -254,6 +257,3 @@ msgstr "Samstag"
 #: .\shift_planner\templates\shifts\weekly_calendar.html:9
 msgid "Sunday"
 msgstr "Sonntag"
-
-#~ msgid "My Overview"
-#~ msgstr "Meine Übersicht"

@@ -7,7 +7,7 @@
 <h2 class="mb-3">{% translate "Detail View" %}</h2>
 
 <div class="container text-start">
-    <div class="row align-items-start">
+    <div class="row align-items-start mb-3">
         <div class="col">
             <h4>{% translate "Details" %}</h4>
             <table class="table text-start">
@@ -49,7 +49,7 @@
             </ol>
         </div>
         <div class="col">
-            <h4>{% translate "Employees not registered" %}</h4>
+            <h4>{% translate "Available Employees" %}</h4>
             {% if not_registered_users %}{% else %}
             <div class="alert alert-secondary" role="alert">
                 {% translate "All employees are registered." %}
@@ -61,13 +61,29 @@
                     <td class="align-middle col-sm-9">{{ employee.get_full_name }}</td>
                     <td><a class="btn btn-primary btn-sm" role="button" href="/planner/shift/{{ shift.id }}/register/{{ employee.id }}">{% translate "Register" %}</a></td>
                 {% endfor %}
-            </ol>
+                </table>
         </div>
     </div>
-
-
-
-</table>
+    <div class="row mb-3">
+        <hr class="border border-secondary">
+        <div class="col">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="" class="btn btn-primary">{% translate "Back" %}</a>
+                {% if user.is_staff %}
+                {% if perms.shift_planner.change_shift %}
+                    <a href="/admin/shift_planner/shift/{{ shift.id }}/change/" class="btn btn-secondary" target="_blank">{% translate "Update" %}</a>
+                    {% endif %}
+                    {% if perms.shift_planner.delete_shift %}
+                        <a href="/admin/shift_planner/shift/{{ shift.id }}/delete/" class="btn btn-secondary" target="_blank">{% translate "Delete" %}</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% if perms.shift_planner.add_shift %}
+                <a href="/admin/shift_planner/shift/add/" type="button" class="btn btn-secondary" target="_blank">{% translate "New" %}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 
 

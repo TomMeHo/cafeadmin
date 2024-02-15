@@ -17,7 +17,7 @@ def list_shifts(request):
 
 # TODO improve
 @login_required(login_url='/accounts/login/')
-@permission_required('catalog.does_planning')
+@permission_required('shift_planner.does_planning')
 def shift_detail(request, shift_id):
     shift = get_object_or_404(Shift, pk=shift_id)
     registrations = ShiftRegistration.objects.filter(shift=shift_id)
@@ -26,7 +26,7 @@ def shift_detail(request, shift_id):
     all_users = CustomUser.objects.all().order_by('last_name')
     not_registered_users = [x for x in all_users if x not in registered_usernames]
 
-    return render(request, "shifts/detail.html", {"shift": shift, "registrations": registrations, "not_registered_users": not_registered_users})
+    return render(request, "shifts/detail.html", {"shift": shift, "registrations": registrations, "not_registered_users": not_registered_users, "nav_menu_item": "detail"})
 
 
 @login_required(login_url='/accounts/login/')
@@ -46,7 +46,7 @@ def shift_unregister_myself(request, shift_id):
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
-@permission_required('catalog.can_register_others')
+@permission_required('shift_planner.can_register_others')
 @login_required(login_url='/accounts/login/')
 def shift_unregister_other(request, shift_id, employee_id):
     shift = Shift.objects.get(pk=shift_id)
@@ -55,7 +55,7 @@ def shift_unregister_other(request, shift_id, employee_id):
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
-@permission_required('catalog.can_register_others')
+@permission_required('shift_planner.can_register_others')
 @login_required(login_url='/accounts/login/')
 def shift_register_other(request, shift_id, employee_id):
     shift = Shift.objects.get(pk=shift_id)
