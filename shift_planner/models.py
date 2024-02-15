@@ -16,12 +16,16 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+    
+    class Meta:
+        verbose_name = "User"
+        verbose_name_plural = "User"
 
 class Shift(models.Model):
     shift_date = models.DateField(verbose_name = _("Date"))
     starts_at = models.TimeField(verbose_name = _("Starts at"))
     ends_at = models.TimeField(verbose_name = _("Ends at"))
-    title = models.CharField(max_length = 80, default = '', verbose_name = _("Title"))
+    title = models.CharField(max_length = 80, default = '', verbose_name = _("Title"), blank=False)
     required_employees_min = models.IntegerField(default = 0, verbose_name = _("Minimum required employees"))
     required_employees_max = models.IntegerField(default = 0, verbose_name = _("Maximum required employees"))
 
