@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 00:14+0100\n"
+"POT-Creation-Date: 2024-02-15 01:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\shift_planner\apps.py:8
+#: .\shift_planner\apps.py:8 .\shift_planner\templates\shifts\detail.html:4
 msgid "Shift Planner"
 msgstr "Schichtplaner"
 
 #: .\shift_planner\models.py:21
+#: .\shift_planner\templates\shifts\detail.html:14
 msgid "Date"
 msgstr "Datum"
 
 #: .\shift_planner\models.py:22
+#: .\shift_planner\templates\shifts\detail.html:15
 msgid "Starts at"
 msgstr "Startet um"
 
 #: .\shift_planner\models.py:23
+#: .\shift_planner\templates\shifts\detail.html:16
 msgid "Ends at"
 msgstr "Endet um"
 
@@ -58,6 +61,7 @@ msgid "Overview by month"
 msgstr "Monatsübersicht"
 
 #: .\shift_planner\templates\base.html:36
+#, python-format
 msgid " Logged in as: %(name)s "
 msgstr "Eingeloggt als: %(name)s "
 
@@ -116,9 +120,63 @@ msgid "Change my password"
 msgstr "Mein Passwort ändern"
 
 #: .\shift_planner\templates\shifts\detail.html:4
-#: .\shift_planner\templates\shifts\overview.html:4
-msgid "Shift Planner - My Overview"
-msgstr "Schichtplaner - Meine Übersicht"
+msgid "Detail View"
+msgstr "Detailansicht"
+
+#: .\shift_planner\templates\shifts\detail.html:12
+msgid "Details"
+msgstr "Details"
+
+#: .\shift_planner\templates\shifts\detail.html:17
+msgid "Description"
+msgstr ""
+
+#: .\shift_planner\templates\shifts\detail.html:18
+msgid "Required employees"
+msgstr "Erforderliche Mitarbeiter"
+
+#: .\shift_planner\templates\shifts\detail.html:20
+msgid "Registered employees"
+msgstr "Eingetragene Mitarbeiter"
+
+#: .\shift_planner\templates\shifts\detail.html:25
+#: .\shift_planner\templates\shifts\shift_card.html:33
+msgid "Understaffed."
+msgstr "Unterbesetzt"
+
+#: .\shift_planner\templates\shifts\detail.html:33
+#, fuzzy
+#| msgid "You are not registered for any shifts."
+msgid "Registered for this shift"
+msgstr "Sie sind derzeit für keine kommende Schicht registriert."
+
+#: .\shift_planner\templates\shifts\detail.html:36
+#, fuzzy
+#| msgid "Not registered."
+msgid "No one registered."
+msgstr "Sie sind nicht eingetragen."
+
+#: .\shift_planner\templates\shifts\detail.html:43
+#: .\shift_planner\templates\shifts\shift_card.html:45
+msgid "Unregister"
+msgstr "Austragen"
+
+#: .\shift_planner\templates\shifts\detail.html:52
+#, fuzzy
+#| msgid "Not registered."
+msgid "Employees not registered"
+msgstr "Sie sind nicht eingetragen."
+
+#: .\shift_planner\templates\shifts\detail.html:55
+#, fuzzy
+#| msgid "You are registered."
+msgid "All employees are registered."
+msgstr "Sie sind eingetragen."
+
+#: .\shift_planner\templates\shifts\detail.html:62
+#: .\shift_planner\templates\shifts\shift_card.html:42
+msgid "Register"
+msgstr "Eintragen"
 
 #: .\shift_planner\templates\shifts\monthly.html:8
 msgid "previous"
@@ -127,6 +185,10 @@ msgstr "zuvor"
 #: .\shift_planner\templates\shifts\monthly.html:12
 msgid "next"
 msgstr "danach"
+
+#: .\shift_planner\templates\shifts\overview.html:4
+msgid "Shift Planner - My Overview"
+msgstr "Schichtplaner - Meine Übersicht"
 
 #: .\shift_planner\templates\shifts\overview.html:13
 msgid "My next shifts"
@@ -160,18 +222,6 @@ msgstr "Erforderliche Mitarbeiter"
 msgid "Registered Employees"
 msgstr "Eingetragene Mitarbeiter"
 
-#: .\shift_planner\templates\shifts\shift_card.html:32
-msgid "Understaffed."
-msgstr "Unterbesetzt"
-
-#: .\shift_planner\templates\shifts\shift_card.html:42
-msgid "Register"
-msgstr "Eintragen"
-
-#: .\shift_planner\templates\shifts\shift_card.html:45
-msgid "Unregister"
-msgstr "Austragen"
-
 #: .\shift_planner\templates\shifts\shift_card.html:49
 #: .\shift_planner\templates\shifts\shift_card.html:50
 msgid "Detail"
@@ -204,9 +254,6 @@ msgstr "Samstag"
 #: .\shift_planner\templates\shifts\weekly_calendar.html:9
 msgid "Sunday"
 msgstr "Sonntag"
-
-#~ msgid "You are registered."
-#~ msgstr "Sie sind eingetragen."
 
 #~ msgid "My Overview"
 #~ msgstr "Meine Übersicht"
