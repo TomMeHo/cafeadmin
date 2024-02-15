@@ -7,10 +7,11 @@ eggs/
 lib/
 lib64/
 
-# SQLite files
-db.sqlite3
-*.sqlite.db*
-
 # Compiled Files
 __pycache__/
 *.pyc
+
+# Application specific paths and files
+db.sqlite3
+*.sqlite.db*
+sent_emails/

@@ -1,18 +1,18 @@
 {% load i18n %}
 <div class="card mb-3 {% if shift.is_past == True %}text-secondary{% endif %}{% if shift.is_registered == True %}border-primary{% else %}{% endif %}" style="max-width: 18rem;">
     <div class="card-header">
-            {% if cards_with_date == True %}<span class="small">{{ shift.date }}<br></span>{% endif %}
+            {% if cards_with_date == True %}<span class="small">{{ shift.shift_date }}<br></span>{% endif %}
             <span>{{ shift.starts_at|time:"H:i" }}-{{ shift.ends_at|time:"H:i" }}</span>
     </div>
     <div class="card-body">
         <p>
             <h5 class="card-title">{{ shift.title }}</h5>
         </p>
-        <p>
-            {% if shift.is_registered == True  %} {% translate "You are registered." %}{% endif %}
-            {% if shift.is_registered == False %} {% translate "Not registered." %} {% endif %}
-        </p>
-        <p>
+        {% if shift.is_registered == True %}
+            <p class="alert alert-info">{% translate "I'm registered" %}</p>
+        {% endif %}
+            <!-- {% if shift.is_registered == False %} {% translate "Not registered." %} {% endif %} -->
+        <!-- <p>
             <table class="table table-borderless table-sm">
                 <tbody>
                   <tr>
@@ -22,21 +22,21 @@
                   <tr>
                     <td>{% translate "Registered Employees" %}:</td>
                     <td>{{ shift.registered_employees }}</td>
-                    <!-- <td>{{ shift.required_employees_min }}</td> -->
                   </tr>
                 </tbody>
               </table>
-        </p>
+        </p> -->
         <p>
+        {% if perms.shift_planner.does_planning %}
             {% if shift.required_employees_min > shift.registered_employees %}
                 <div class="alert alert-danger" role="alert">
                     {% translate "Understaffed." %}
                 </div>
-
-            
             {% endif %}
+        {% endif %}
         </p>
-        <div class="container">
+        <div>
+
             {% if shift.is_past == False %}
                 {% if shift.is_registered == False %}
                     <a class="btn btn-primary mb-3" role="button" href="/planner/shift/{{ shift.id }}/register">{% translate "Register" %}</a>
@@ -45,7 +45,10 @@
                     <a class="btn btn-primary mb-3" role="button" href="/planner/shift/{{ shift.id }}/unregister">{% translate "Unregister" %}</a>
                 {% endif %}
             {% endif %}
-            <a class="card-link"href="/planner/shift/{{ shift.id }}">{% translate "Detail" %}</a>
+            {% if perms.shift_planner.does_planning %}
+                <a class="btn btn-secondary mb-3" href="/planner/shift/{{ shift.id }}">{% translate "Detail" %}</a>
+                <!-- <a class="card-link"href="/planner/shift/{{ shift.id }}">{% translate "Detail" %}</a> -->
+            {% endif %}
         </div>
     </div>
     <!-- <div class="card-footer">

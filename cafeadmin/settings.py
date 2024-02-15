@@ -128,6 +128,9 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Own user model
+AUTH_USER_MODEL = 'shift_planner.CustomUser'
+
 # Authentication
 LOGIN_URL= '/accounts/login'
 LOGIN_REDIRECT_URL = '/planner'          # after successfull login

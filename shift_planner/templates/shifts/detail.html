@@ -1,15 +1,74 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% translate "Shift Planner - My Overview" %}{% endblock %}
+{% block title %}{% translate "Shift Planner" %}: {% translate "Detail View" %}{% endblock %}
 {% block content %}
 
-<h2>{{ shift }}</h2>
+<h2 class="mb-3">{% translate "Detail View" %}</h2>
 
-<ul>
-{% for registration in registrations %}
-    <li> {{ registration.registree }} </li>
-{% endfor %}
-</ul>
+<div class="container text-start">
+    <div class="row align-items-start">
+        <div class="col">
+            <h4>{% translate "Details" %}</h4>
+            <table class="table text-start">
+                <tr><td>{% translate "Date"%}:</td><td>{{ shift.shift_date }}</td></tr>
+                <tr><td>{% translate "Starts at"%}:</td><td>{{ shift.starts_at }}</td></tr>
+                <tr><td>{% translate "Ends at"%}:</td><td>{{ shift.ends_at }}</td></tr>
+                <tr><td>{% translate "Description"%}:</td><td>{{ shift.title }}</td></tr>
+                <tr><td>{% translate "Required employees"%}:</td><td>{{ shift.required_employees_min }}</td></tr>
+                <tr>
+                    <td>{% translate "Registered employees"%}:</td>
+                    <td>
+                        <p>{{ shift.registered_employees }}</p>
+                        {% if shift.required_employees_min > shift.registered_employees %}
+                            <div class="alert alert-danger" role="alert">
+                                {% translate "Understaffed." %}
+                            </div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <h4>{% translate "Registered for this shift" %}</h4>
+            {% if registrations %}{% else %}
+            <div class="alert alert-secondary" role="alert">
+                {% translate "No one registered." %}
+            </div>
+            {% endif %}
+            <table class="table table-hover">
+                {% for registration in registrations %}
+                <tr class="mb-3">
+                    <td class="align-middle col-sm-9">{{ registration.registree.get_full_name }}</td>
+                    <td><a class="btn btn-primary btn-sm" role="button" href="/planner/shift/{{ shift.id }}/unregister/{{ registration.registree.id }}">{% translate "Unregister" %}</a></td>
+                </tr>
+                        
+                {% endfor %}
+
+            </table>
+            </ol>
+        </div>
+        <div class="col">
+            <h4>{% translate "Employees not registered" %}</h4>
+            {% if not_registered_users %}{% else %}
+            <div class="alert alert-secondary" role="alert">
+                {% translate "All employees are registered." %}
+            </div>
+            {% endif %}
+            <table class="table table-hover">
+                {% for employee in not_registered_users %}
+                <tr class="mb-3">
+                    <td class="align-middle col-sm-9">{{ employee.get_full_name }}</td>
+                    <td><a class="btn btn-primary btn-sm" role="button" href="/planner/shift/{{ shift.id }}/register/{{ employee.id }}">{% translate "Register" %}</a></td>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+
+
+
+</table>
+
+
 
 {% endblock %}
