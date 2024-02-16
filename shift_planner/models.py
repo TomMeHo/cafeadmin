@@ -1,4 +1,4 @@
-from typing import Self
+from typing_extensions import Self
 
 from django.db import models
 from django.db.models import Count
