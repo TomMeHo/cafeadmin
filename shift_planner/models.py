@@ -131,7 +131,8 @@ class CalendarDay:
         return CalendarDay( day=specific_date, holiday=holidays.first(), shifts=shifts )
 
 class CalendarWeek:
-    def __init__(self, monday : date, days : list[CalendarDay]):
+    # def __init__(self, monday : date, days : list[CalendarDay]):
+    def __init__(self, monday : date, days):
         self.monday = monday
         self.sunday = monday + timedelta(days = 6)
         self.weeknum = monday.isocalendar()[1]
@@ -152,7 +153,8 @@ class CalendarWeek:
         return CalendarWeek(monday=monday, days=days)
     
 class CalendarMonth:
-    def __init__(self, month : int, year : int, weeks : list[CalendarWeek]):
+    # def __init__(self, month : int, year : int, weeks : list[CalendarWeek]):
+    def __init__(self, month : int, year : int, weeks):
         self.month = month
         self.year = year
         self.weeks = weeks
