@@ -3,6 +3,8 @@
 import os
 import sys
 
+#following line is only required in Django 3.2
+from django.conf import settings
 
 def main():
     """Run administrative tasks."""

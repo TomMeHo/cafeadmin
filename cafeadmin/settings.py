@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Suggestion: Use the key from environment variable.
 SECRET_KEY = 'django-insecure-z#iat39c!-&%m9y(ujn3=giq5_$d_e89adj#1zv4$+t&5a)%vs'
+#SECRET_KEY = os.environ["SHIFT_PLANNER_SECRET"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -139,3 +141,9 @@ LOGOUT_REDIRECT_URL = '/accounts/login'  # after logout
 # Sending emails
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+
+# Security Settings - Uncomment for productive use
+# Securing the site
+CSRF_COOKIE_SECURE  = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
