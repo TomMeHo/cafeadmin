@@ -9,7 +9,7 @@
 {% translate "Sunday"    as Sunday %}
 
 <!-- inspired by https://codepen.io/chrisdpratt/pen/OOybam -->
-<div class="container-flex">
+<div class="container-flex d-sm-none d-md-block">
     <header>
         <div class="row d-none d-sm-flex p-1 bg-dark text-white">
             <h5 class="col-sm p-1 text-center">{{ Monday }}</h5>
@@ -21,10 +21,10 @@
             <h5 class="col-sm p-1 text-center">{{ Sunday }}</h5>
         </div>
     </header>
+    <!-- weekly calendar view --> 
     {% for week in weeks %}
         <div class="row border border-right-0 border-bottom-0">
-            {% for day in week.days %} 
-            <!-- TODO Blende Tage ohne Inhalt auf Mobile aus. -->
+            {% for day in week.days %}
                 <div class="col-sm p-2 border border-left-0 border-top-0 d-sm-inline-block d-none {% if day.is_past == True %} bg-light text-muted {% endif %}">
                     {% if not restrict_on_month or restrict_on_month == day.date.month %}
                         <h5 class="row align-items-center">
@@ -40,5 +40,17 @@
                 </div>
             {% endfor %}
         </div>
+    {% endfor %}
+</div>
+<div class="container-flex d-block d-md-none">
+    <!-- xs list view -->
+    {% for week in weeks %}
+            {% for day in week.days %}
+                {% if not restrict_on_month or restrict_on_month == day.date.month %}
+                    {% for shift in day.shifts %}
+                        {% include "shifts/shift_card.html" %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
     {% endfor %}
 </div>

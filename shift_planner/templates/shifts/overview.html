@@ -9,7 +9,7 @@
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
     </div> -->
 
-    <div class="container">
+    <div class="container-flex">
         <h2>{% translate "My next shifts" %}</h2>
         <p>{% translate "Next shifts I am registered for" %}</p>
         {% if my_next_shifts|length == 0 %}
@@ -18,9 +18,11 @@
             </div>
         {% else %}
             <div class="card-group">
-                {% for shift in my_next_shifts %}
-                    {% include "shifts/shift_card.html" %}
-                {% endfor %}
+                {% with cards_with_date=True %}
+                    {% for shift in my_next_shifts %}
+                        {% include "shifts/shift_card.html" %}
+                    {% endfor %}
+                {% endwith %}
             </div>
         {% endif %}
     </div>
