@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
+ 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -144,6 +144,6 @@ EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 # Security Settings - Uncomment for productive use
 # Securing the site
-CSRF_COOKIE_SECURE  = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+#CSRF_COOKIE_SECURE  = True
+#SESSION_COOKIE_SECURE = True
+#SECURE_SSL_REDIRECT = True
